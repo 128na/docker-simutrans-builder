@@ -4,3 +4,4 @@ services:
     build: ./app
     volumes:
       - ./app/src:/src
+      - ./scripts:/scripts
