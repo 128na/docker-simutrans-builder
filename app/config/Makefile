@@ -42,9 +42,9 @@ else
       CFLAGS  += -DPNG_STATIC -DZLIB_STATIC
       ifeq ($(shell expr $(STATIC) \>= 1), 1)
         CFLAGS  += -static
-        LDFLAGS += -static-libgcc -static-libstdc++ -Wl,-Bstatic -lpthread -lbz2 -lz -Wl,-Bdynamic
+        LDFLAGS += -static-libgcc -static-libstdc++ -static
       endif
-      LDFLAGS += -pthread -Wl,--large-address-aware
+      LDFLAGS += -pthread -W
       SOURCES += simsys_w32_png.cc
       CFLAGS  += -DNOMINMAX -DWIN32_LEAN_AND_MEAN -DWINVER=0x0501 -D_WIN32_IE=0x0500
       LIBS    += -lmingw32 -lgdi32 -lwinmm -lws2_32 -limm32
